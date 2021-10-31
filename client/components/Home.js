@@ -11,7 +11,6 @@ export const Home = props => {
   return (
     <div>
       <h3>Welcome, {username}</h3>
-      <Chat />
     </div>
   )
 }
