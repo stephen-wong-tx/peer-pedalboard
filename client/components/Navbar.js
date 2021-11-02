@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
 import Chat from './Chat'
+import Stage from './Stage'
 
 const Navbar = ({handleClick, isLoggedIn}) => (
   <div>
@@ -26,6 +27,7 @@ const Navbar = ({handleClick, isLoggedIn}) => (
     </nav>
     <hr />
     <Chat />
+    <Stage />
   </div>
 )
 
