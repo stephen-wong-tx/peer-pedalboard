@@ -201,9 +201,14 @@ const Stage = () => {
 
   const handleChangeVolume = (event) => {
     setVolumeValue(event.target.value);
+    const value = parseFloat(event.target.value);
+    gainNode.gain.setTargetAtTime(value, context.currentTime, .01);
   }
   const handleChangePreamp = (event) => {
     setPreampDriveValue(event.target.value);
+    const value = parseInt(event.taret.value);
+    preampDrive.curve = makePreampDriveCurve(value * 1);
+    preampDrive.oversample = '4x';
   }
   const handleChangeBass = (event) => {
     setBassValue(event.target.value);
@@ -216,6 +221,9 @@ const Stage = () => {
   }
   const handleChangeDrive = (event) => {
     setDriveValue(event.target.value);
+    const value = parseInt(event.target.value);
+    driveEQ.curve = makeDriveCurve(value * 1);
+    driveEQ.oversample = '1x';
   }
 
   return (
